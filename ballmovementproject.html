@@ -1,0 +1,175 @@
+<div id="ball" style="
+z-index:5;
+position:absolute;
+left:0px;
+top:200px;
+width:100px;
+height:100px;
+border-radius:50%;
+background: rgb(59, 24, 156);"></div>
+
+<div id="ballTwo" style="
+z-index:10;
+position:absolute;
+left:0px;
+top:400px;
+width:300px;
+height:300px;
+border-radius:50%;
+background: rgb(17, 233, 161);"></div>
+
+<div id="ballThree" style="
+z-index:10;
+position:absolute;
+left:100px;
+top:600px;
+width:100px;
+height:100px;
+border-radius:50%;
+background: rgb(233, 165, 17);"></div>
+
+<script>
+
+
+// YOUR CODE 
+// ----------------
+
+// NEW JS code: 
+
+//Set global variable that would contain the position, velocity and the html element "ball"
+
+var ball = document.getElementById('ball');
+var ballTwo = document.getElementById('ballTwo');
+var ballThree = document.getElementById('ballThree');
+var velocityX = 30;
+var velocityY = 10;
+var positionX = 0;
+var positionY = 0;
+var reverse = false;
+
+
+
+//write a function that can change the position of the html element "ball"
+function moveBall() {
+// two fixed x-axis coordinates 
+
+var Xmin = 0;
+var Xmax = 300;
+
+// two fixed y-axis coordinates 
+var Ymin = 0;
+var Ymax = 300;
+
+
+// when reverse is false, the ball moves from left to right (ball position + velocity)
+if (reverse) {
+  positionX = positionX - velocityX;
+  positionY = positionY - velocityY;
+  ball.style.left = positionX + "px";
+  ball.style.top = positionY + "px";
+} else {
+  positionX = positionX + velocityX;
+  positionY = positionY + velocityY;
+  ball.style.left = positionX + "px";
+  ball.style.top = positionY + "px";
+}
+// if the ball position (positionX) is greater than Xmax or equals Xmin, then the value of reverse should be switched.
+if (
+  positionX > Xmax ||
+  positionX === Xmin ||
+  positionY > Ymax ||
+  positionY === Ymin
+) {
+  reverse = !reverse;
+}
+
+
+}
+
+// This call the moveBall function every 60ms
+setInterval(moveBall, 600)
+
+
+//write a function that can change the position of the html element "ball"
+function moveBallTwo() {
+// two fixed x-axis coordinates 
+
+var Xmin = 0;
+var Xmax = 600;
+
+// two fixed y-axis coordinates 
+var Ymin = 0;
+var Ymax = 600;
+
+
+// when reverse is false, the ball moves from left to right (ball position + velocity)
+if (reverse) {
+  positionX = positionX - velocityX;
+  positionY = positionY - velocityY;
+  ballTwo.style.left = positionX + "px";
+  ballTwo.style.top = positionY + "px";
+} else {
+  positionX = positionX + velocityX;
+  positionY = positionY + velocityY;
+  ballTwo.style.left = positionX + "px";
+  ballTwo.style.top = positionY + "px";
+}
+// if the ball position (positionX) is greater than Xmax or equals Xmin, then the value of reverse should be switched.
+if (
+  positionX > Xmax ||
+  positionX === Xmin ||
+  positionY > Ymax ||
+  positionY === Ymin
+) {
+  reverse = !reverse;
+}
+
+
+}
+
+// This call the moveBall function every 50ms
+setInterval(moveBallTwo, 500);
+
+function moveBallThree() {
+// two fixed x-axis coordinates 
+
+var Xmin = 0;
+var Xmax = 600;
+
+// two fixed y-axis coordinates 
+var Ymin = 0;
+var Ymax = 600;
+
+
+// when reverse is false, the ball moves from left to right (ball position + velocity)
+if (reverse) {
+  positionX = positionX - velocityX;
+  positionY = positionY - velocityY;
+  ballThree.style.left = positionX + "px";
+  ballThree.style.top = positionY + "px";
+} else {
+  positionX = positionX + velocityX;
+  positionY = positionY + velocityY;
+  ballThree.style.left = positionX + "px";
+  ballThree.style.top = positionY + "px";
+}
+// if the ball position (positionX) is greater than Xmax or equals Xmin, then the value of reverse should be switched.
+if (
+  positionX > Xmax ||
+  positionX === Xmin ||
+  positionY > Ymax ||
+  positionY === Ymin
+) {
+  reverse = !reverse;
+}
+
+
+}
+
+// This call the moveBall function every 50ms
+setInterval(moveBallThree, 500);
+
+
+
+
+</script>
